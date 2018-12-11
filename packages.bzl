@@ -10,5 +10,11 @@ def loadIdrisPackages():
   git_repository(
       name = "lightyear",
       remote = "https://github.com/shmish111/lightyear.git",
-      commit = "bde456b8b564fa3086c08508063ec5ff170be47f",
+      commit = "9da02a121a17f0284ad2354fd809aea28847b6a8",
+  )
+
+  git_repository(
+      name = "idris-contrib",
+      remote = "https://github.com/shmish111/idris-contrib.git",
+      commit = "58898db067da0af4c520bd46e3f3d8edd19ba226",
   )
