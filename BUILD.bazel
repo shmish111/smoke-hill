@@ -3,5 +3,6 @@ load("@rules_idris//idris:rules_idris.bzl", "idris_library")
 idris_library (
     name = "smoke-hill",
     deps = ["@lightyear//:lightyear"],
+    srcs = ["Dummy.idr"],
     visibility = ["//visibility:public"],
 )
