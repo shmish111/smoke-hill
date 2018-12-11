@@ -5,6 +5,7 @@ idris_library (
     deps = [ "@idris-effects//:effects"
            , "@idris-contrib//:contrib"
            , "@lightyear//:lightyear"
+           , "@tomladris//:tomladris"
            ],
     srcs = ["Dummy.idr"],
     visibility = ["//visibility:public"],
