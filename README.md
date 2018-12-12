@@ -33,8 +33,22 @@ idris_library (
 )
 ```
 
-## TODO:
+## Why not just use nixpkgs
 
-* Add more info to this README (contributing, different versions, remote cache)
+This path has already been trodden by the Haskell community and [Tweag have written about it in some detail](https://www.tweag.io/posts/2018-03-15-bazel-nix.html), the same arguments apply directly to Idris.
+
+## Contributing
+
+If you are the maintainer of an Idris library, it's very simple to add it to Smoke Hill.
+
+1. Make sure you can build the project with Bazel and that all dependencies are also in Smoke hill
+2. Fork the smoke-hill github repository
+3. Add your repository to the [loadIdrisPackages function](https://github.com/shmish111/smoke-hill/blob/master/packages.bzl#L3)
+4. Add your package to [the dummy project BUILD file deps](https://github.com/shmish111/smoke-hill/blob/master/BUILD.bazel#L8)
+5. Create a pull request
+
+##
+TODO:
+
 * Add to CI build
 * Push to a remote cache
