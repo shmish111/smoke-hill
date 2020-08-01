@@ -1,0 +1,65 @@
+{
+    "Idris-Bifunctors": {
+        "branch": "master",
+        "description": "A small bifunctor library for idris",
+        "homepage": null,
+        "owner": "shmish111",
+        "repo": "Idris-Bifunctors",
+        "rev": "2696a5aa332872567fdfd1033f8991eaf0fbb2cc",
+        "sha256": "0sr1nspqgib8r552h08qi35q4z3wcnbgbnsvmr0cyzsdc1vvhb9f",
+        "type": "tarball",
+        "url": "https://github.com/shmish111/Idris-Bifunctors/archive/2696a5aa332872567fdfd1033f8991eaf0fbb2cc.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "idris-lens": {
+        "branch": "master",
+        "description": "van Laarhoven lenses for Idris",
+        "homepage": null,
+        "owner": "shmish111",
+        "repo": "idris-lens",
+        "rev": "c0c45c8b0940f46e15bf7722d62c35812e0ffb67",
+        "sha256": "0rj8gaszppb3aydr3yjay0psld3r68j6g6l0j8nx30ir8ii7vqzv",
+        "type": "tarball",
+        "url": "https://github.com/shmish111/idris-lens/archive/c0c45c8b0940f46e15bf7722d62c35812e0ffb67.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "lightyear": {
+        "branch": "master",
+        "description": "Parser combinators for Idris",
+        "homepage": "",
+        "owner": "ziman",
+        "repo": "lightyear",
+        "rev": "6f56439ea4bdba6a3ad4a11221c6028ed9d74047",
+        "sha256": "08mmpysd62ya10n312jnhgscycnblq2lpk42skk8cvs8f5gznkma",
+        "type": "tarball",
+        "url": "https://github.com/ziman/lightyear/archive/6f56439ea4bdba6a3ad4a11221c6028ed9d74047.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "dependencies": [
+            "effects"
+        ]
+    },
+    "wl-pprint": {
+        "branch": "master",
+        "description": "A mirror of wl-pprint fixed for GHC 7.10.2",
+        "homepage": null,
+        "owner": "shmish111",
+        "repo": "wl-pprint",
+        "rev": "7509b869c54d339ce170d9944bb224113bfb4636",
+        "sha256": "0cl9krr038harl3ywml3spnndf5j9vp5mq75422hq9r4r012d4f4",
+        "type": "tarball",
+        "url": "https://github.com/shmish111/wl-pprint/archive/7509b869c54d339ce170d9944bb224113bfb4636.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "optparse-idris": {
+        "branch": "master",
+        "description": "Minimal port of optparse-applicative to idris",
+        "homepage": null,
+        "owner": "HuwCampbell",
+        "repo": "optparse-idris",
+        "rev": "a60c82f026469e6dcc010e26164953658b08bbb2",
+        "sha256": "1gzcrpyshb21z52lkpwri57nlxpknpspf684m1war14fbp1rc5fv",
+        "type": "tarball",
+        "url": "https://github.com/HuwCampbell/optparse-idris/archive/a60c82f026469e6dcc010e26164953658b08bbb2.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}

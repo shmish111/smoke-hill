@@ -1,6 +1,6 @@
 # Smoke Hill
 
-Smoke Hill is where Idris and his family live. It is also a package index for Idris libraries.
+Smoke Hill is where Idris and his family live. It is also a package set for Idris libraries.
 
 ## How does it help
 
@@ -8,47 +8,20 @@ Package sets are a way out of "dependency hell". We look at all the libraries in
 
 ## How can I use Smoke Hill in my project
 
-Smoke Hill is a bazel-based project, it is designed to be used by other bazel projects. Using [rules_idris](https://github.com/BryghtWords/rules_idris) add the following to your `WORKSPACE` file:
-
-```python
-git_repository(
-    name = "smoke-hill",
-    remote = "https://github.com/shmish111/smoke-hill.git",
-    commit = "73addb298b9b4d3cb7188c03627ff36ed16cd932",
-)
-load("@smoke-hill//:packages.bzl", "loadIdrisPackages")
-loadIdrisPackages()
-```
-
-Now you can access dependencies in your `BUILD` files like this:
-
-```python
-load("@rules_idris//idris:rules_idris.bzl", "idris_library")
-
-idris_library (
-    name = "my-lib",
-    deps = ["@idris-effects//:effects"],
-    srcs = native.glob(["**/*.idr"]),
-    visibility = ["//visibility:public"],
-)
-```
-
-## Why not just use nixpkgs
-
-This path has already been trodden by the Haskell community and [Tweag have written about it in some detail](https://www.tweag.io/posts/2018-03-15-bazel-nix.html), the same arguments apply directly to Idris.
+Smoke Hill is currently built using nix however this is just out of convenience of caching. Smoke Hill is really just a list of git repositories and commits that all work together meaning you can use whatever tools you like to build your project, nix being just one of them. In fact we are currently in the process of building a package manager specifically for Idris that will make use of Smoke Hill.
 
 ## Contributing
 
-If you are the maintainer of an Idris library, it's very simple to add it to Smoke Hill.
+If you are the maintainer of an Idris library, it's fairly simple to add it to Smoke Hill however if you have any problems, feel free to open a github issue.
 
-1. Make sure you can build the project with Bazel and that all dependencies are also in Smoke hill
-2. Fork the smoke-hill github repository
-3. Add your repository to the [loadIdrisPackages function](https://github.com/shmish111/smoke-hill/blob/master/packages.bzl#L3)
-4. Add your package to [the dummy project BUILD file deps](https://github.com/shmish111/smoke-hill/blob/master/BUILD.bazel#L8)
+1. Fork the smoke-hill github repository
+2. Add your repository to the [package sources file](https://github.com/shmish111/smoke-hill/blob/master/nix/packae-sources.json)
+3. Add your package to the [packages derivation](https://github.com/shmish111/smoke-hill/blob/master/nix/packages.nix)
+4. Check that `nix-build -A packages` builds successfully. If you don't or can't use nix then you can create a PR anyway and Smoke-Hill maintainers will check things for you.
 5. Create a pull request
 
-##
-TODO:
+## What's coming up
 
-* Add to CI build
-* Push to a remote cache
+The direction that we intend to take with this is to make life as easy as possible for library maintainers. This means more and more automation will be added to Smoke Hill. The vision is that a library maintainer will only need to take action if they push to their main branch something that breaks the latest package set. Additionally there will be minimal intervention required by the package set maintainers, for example, collaboration would be required if the maintainer of a core library wished to make a breaking change that would affect multiple libraries in the package set.
+
+Additionally the new build tool will be a core part of the ecosystem and will make use of Idris extremely easy.
