@@ -1,10 +1,11 @@
 let
   sources = import ./nix/sources.nix { };
   pkgs = import sources.nixpkgs { };
-  packages = import ./default.nix {};
-in
-with pkgs; mkShell {
-  buildInputs = [
-    gmp chez packages.idris2 niv
-  ];
-}
+in with pkgs;
+let
+  packages = import ./default.nix { };
+  idris2 = packages.idris2;
+  withPackages = callPackage ./nix/with-packages.nix { inherit idris2; };
+  exampleIdrisWithPackages =
+    withPackages [ packages.wl-pprint packages.lens ];
+in mkShell { buildInputs = [ gmp chez niv exampleIdrisWithPackages ]; }

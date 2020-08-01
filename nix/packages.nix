@@ -23,10 +23,12 @@ let
 
 in rec {
   inherit idris2;
-  Idris-Bifunctors =
-    mkIdrisPackage "bifunctors" package-sources.Idris-Bifunctors [ ];
-  idris-lens =
-    mkIdrisPackage "lens" package-sources.idris-lens [ Idris-Bifunctors ];
+  bifunctors = mkIdrisPackage "bifunctors" package-sources.Idris-Bifunctors [ ];
+  lens = mkIdrisPackage "lens" package-sources.idris-lens [ bifunctors ];
   wl-pprint = mkIdrisPackage "wl-pprint" package-sources.wl-pprint [ ];
-  optparse = mkIdrisPackage "optparse" package-sources.optparse-idris [ wl-pprint idris-lens Idris-Bifunctors ];
+  optparse = mkIdrisPackage "optparse" package-sources.optparse-idris [
+    wl-pprint
+    lens
+    bifunctors
+  ];
 }

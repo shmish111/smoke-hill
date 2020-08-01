@@ -2,10 +2,11 @@
 
 let
   pkgs = import sources.nixpkgs { };
+  package-sources = import ./package-sources.nix { };
   idris2 = with pkgs;
     stdenv.mkDerivation {
       name = "idris2";
-      src = sources.Idris2;
+      src = package-sources.Idris2;
       strictDeps = true;
       nativeBuildInputs = [ makeWrapper clang chez ];
       buildInputs = [ chez ];

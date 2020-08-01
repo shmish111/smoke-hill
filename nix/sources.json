@@ -1,16 +1,4 @@
 {
-    "Idris2": {
-        "branch": "master",
-        "description": "A purely functional programming language with first class types",
-        "homepage": "https://idris-lang.org/",
-        "owner": "idris-lang",
-        "repo": "Idris2",
-        "rev": "fb481cd2d1c78bb7ef78caa1ab4eb91356ea3510",
-        "sha256": "0blcrw97gd3d8zgfnzdmhgc4722b1xn0cmpnrqk3pgzgvh08rim8",
-        "type": "tarball",
-        "url": "https://github.com/idris-lang/Idris2/archive/fb481cd2d1c78bb7ef78caa1ab4eb91356ea3510.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",

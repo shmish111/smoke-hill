@@ -11,6 +11,18 @@
         "url": "https://github.com/shmish111/Idris-Bifunctors/archive/2696a5aa332872567fdfd1033f8991eaf0fbb2cc.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "Idris2": {
+        "branch": "master",
+        "description": "A purely functional programming language with first class types",
+        "homepage": "https://idris-lang.org/",
+        "owner": "idris-lang",
+        "repo": "Idris2",
+        "rev": "143d2c5b11a58b547b8a5a34eb21dcd4b9512591",
+        "sha256": "0c54qry2z5by78x4qnf5vajmbr7p3k7pwwn5dzrc8pv13p6ca3p4",
+        "type": "tarball",
+        "url": "https://github.com/idris-lang/Idris2/archive/143d2c5b11a58b547b8a5a34eb21dcd4b9512591.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "idris-lens": {
         "branch": "master",
         "description": "van Laarhoven lenses for Idris",
