@@ -22,6 +22,7 @@ let
     };
 
 in rec {
+  inherit idris2;
   Idris-Bifunctors =
     mkIdrisPackage "bifunctors" package-sources.Idris-Bifunctors [ ];
   idris-lens =
