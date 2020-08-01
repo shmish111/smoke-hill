@@ -14,6 +14,8 @@ We believe that a community can be built _around_ a package set and with Idris w
 
 Smoke Hill is currently built using nix however this is just out of convenience and for caching. Smoke Hill is really just a list of git repositories and commits that all work together meaning you can use whatever tools you like to build your project, nix being just one of them. In fact we are currently in the process of building a package manager specifically for Idris that will make use of Smoke Hill.
 
+If you are happy using nix, see [the example project](./example) for an idea of how to use Smoke Hill with nix (it's super easy).
+
 ## Contributing
 
 If you are the maintainer of an Idris library, it's fairly simple to add it to Smoke Hill however at this time you need to have nix installed. If you have any problems or you can't/don't want to install nix then feel free to open a github issue and the maintainers can add it for you.
