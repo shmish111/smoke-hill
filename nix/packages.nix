@@ -1,6 +1,8 @@
-{ package-sources ? import ./package-sources.nix, pkgs, idris2 }:
+{ package-sources ? import ./package-sources.nix, sources ? import ./sources.nix
+, pkgs ? import sources.nixpkgs { } }:
 
 let
+  idris2 = import ./idris2.nix { inherit sources; };
   mkIdrisPackage = name: src: deps:
     with pkgs;
     let
