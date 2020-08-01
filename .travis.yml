@@ -4,6 +4,7 @@ sudo: false
 env:
   global:
   - CACHIX_CACHE=shmish111
+  - secure: PW+DGJyevSOsmSinvIlOdAGwm6dzje/zVzVG+Vg9lek/MO8ChxSAsVrq+DkseAi2uTDoFIHZ92GNRtt7jXLpOIY0lOqnan9NxerQF7Bsr/GLaasZkYJsU6RuzAhyfEhxcXYo0BP+FuAyDDXRwWknHJkXcASHomusvyprfbZJThbDYfCVBdD6iDBJ8ZzJsmosLwLJ3fW34SWImHNOD6ZErh5B64KnCU+Jy/Ntfe3BE42IQumV6CxWQ+njEXiWIrPZv5BRaISNOkby68J89/+wh10dg4y3LRjWkVr/aVJv6HY7/19l6SBcit+dBOX1k/yHjBuzYGNIs5UA6Igj3nJYNT/mfKACjUO3iW9pHCMQd6JRvQ368nWkuTBtKPhspRZmbF5A+yV+jU4lnT7kV9h6Ng0+seSgODs7m+Qyd11B2ACLD1aD+CH8w+c8fbPmNfs4NrEchaNpIEIWOf2gl8GOZissGErT4oxVr89RMTKK2b+vFj8VJ8J9/SR+RGJfi0QCKumgdqbt+FhKuLXpsbiflndV83vGmgcIDKvPP5JtGtwRe6avgHdY6Wr4UdnZx5MxBeKP2c4xwDE0GZUAN09qSRw1xceicBTILIlbFIMVNt6L9ZT18X/fLAZBZaRxiW970jaY3n25tEWAjL7vxoAFzUKhnczZfwxITfSp83TJQsU=
 install:
 - echo "trusted-users = $USER" | sudo tee -a /etc/nix/nix.conf
 - sudo systemctl restart nix-daemon
@@ -14,4 +15,5 @@ script:
 - nix-build
 - nix-shell --run "echo nix-shell successfully entered"
 after_success:
-- comm -13 <(sort /tmp/store-path-pre-build | grep -v '\.drv$') <(nix path-info --all | grep -v '\.drv$' | sort) | cachix push $CACHIX_CACHE
+- comm -13 <(sort /tmp/store-path-pre-build | grep -v '\.drv$') <(nix path-info --all
+  | grep -v '\.drv$' | sort) | cachix push $CACHIX_CACHE
