@@ -5,6 +5,6 @@ let
 in
 with pkgs; mkShell {
   buildInputs = [
-    gmp chez packages.idris2
+    gmp chez packages.idris2 niv
   ];
 }
