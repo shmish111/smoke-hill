@@ -1,2 +1,17 @@
 language: nix
-script: nix-build -A packages
+nix: 2.3.7
+sudo: false
+env:
+  global:
+  - CACHIX_CACHE=shmish111
+install:
+- echo "trusted-users = $USER" | sudo tee -a /etc/nix/nix.conf
+- sudo systemctl restart nix-daemon
+- nix-env -iA nixpkgs.cachix
+- cachix use $CACHIX_CACHE
+- nix path-info --all > /tmp/store-path-pre-build
+script:
+- nix-build
+- nix-shell --run "echo nix-shell successfully entered"
+after_success:
+- comm -13 <(sort /tmp/store-path-pre-build | grep -v '\.drv$') <(nix path-info --all | grep -v '\.drv$' | sort) | cachix push $CACHIX_CACHE
