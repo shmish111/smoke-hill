@@ -1,5 +1,7 @@
 # Smoke Hill
 
+[![Build Status](https://travis-ci.com/shmish111/smoke-hill.svg?branch=main)](https://travis-ci.com/shmish111/smoke-hill)
+
 Smoke Hill is where Idris and his family live. It is also a package set for Idris libraries.
 
 ## How does it help
