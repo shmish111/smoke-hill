@@ -40,7 +40,7 @@ let
   withPackages = pkgs.callPackage ./with-packages.nix { inherit idris2; };
 
 in rec {
-  inherit idris2 withPackages idris2Api;
+  inherit idris2 withPackages idris2Api mkIdrisPackage;
   bifunctors = mkIdrisPackage "bifunctors" package-sources.Idris-Bifunctors [ ];
   lens = mkIdrisPackage "lens" package-sources.idris-lens [ bifunctors ];
   wl-pprint = mkIdrisPackage "wl-pprint" package-sources.wl-pprint [ ];
