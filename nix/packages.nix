@@ -23,10 +23,24 @@ let
       '';
     };
 
+  idris2Api = with pkgs; stdenv.mkDerivation rec {
+      name = "idris2api";
+      src = package-sources.Idris2;
+      buildPhase = ''
+        make src/IdrisPaths.idr
+        ls -l ./src
+        ${idris2}/bin/idris2 --build ${name}.ipkg
+      '';
+      installPhase = ''
+        mkdir $out
+        cp -R ./build/ttc/* $out/
+      '';
+    };
+
   withPackages = pkgs.callPackage ./with-packages.nix { inherit idris2; };
 
 in rec {
-  inherit idris2 withPackages;
+  inherit idris2 withPackages idris2Api;
   bifunctors = mkIdrisPackage "bifunctors" package-sources.Idris-Bifunctors [ ];
   lens = mkIdrisPackage "lens" package-sources.idris-lens [ bifunctors ];
   wl-pprint = mkIdrisPackage "wl-pprint" package-sources.wl-pprint [ ];
