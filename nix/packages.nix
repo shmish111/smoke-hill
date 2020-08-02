@@ -1,8 +1,8 @@
 { package-sources ? import ./package-sources.nix, sources ? import ./sources.nix
-, pkgs ? import sources.nixpkgs { } }:
+, pkgs ? import sources.nixpkgs { }
+, idris2 ? import ./idris2.nix { inherit sources; } }:
 
 let
-  idris2 = import ./idris2.nix { inherit sources; };
   mkIdrisPackage = name: src: deps:
     with pkgs;
     let
@@ -23,7 +23,8 @@ let
       '';
     };
 
-  idris2Api = with pkgs; stdenv.mkDerivation rec {
+  idris2Api = with pkgs;
+    stdenv.mkDerivation rec {
       name = "idris2api";
       src = package-sources.Idris2;
       buildPhase = ''
