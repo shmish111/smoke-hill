@@ -29,7 +29,6 @@ let
       src = package-sources.Idris2;
       buildPhase = ''
         make src/IdrisPaths.idr
-        ls -l ./src
         ${idris2}/bin/idris2 --build ${name}.ipkg
       '';
       installPhase = ''
