@@ -23,6 +23,26 @@ let
       '';
     };
 
+  mkIdrisExecutable = name: src: deps:
+    with pkgs;
+    let
+      installDep = dep: ''
+        cp -r ${dep}/ ./${dep.name}/
+        export IDRIS2_PATH=$IDRIS2_PATH:./${dep.name}
+      '';
+      installDeps = pkgs.lib.concatStringsSep "\n" (map installDep deps);
+    in stdenv.mkDerivation rec {
+      inherit name src;
+      buildPhase = ''
+        ${installDeps}
+        ${idris2}/bin/idris2 --build ${name}.ipkg
+      '';
+      installPhase = ''
+        mkdir -p $out/bin
+        cp -R ./build/exec/* $out/bin/
+      '';
+    };
+
   idris2Api = with pkgs;
     stdenv.mkDerivation rec {
       name = "idris2api";
@@ -40,7 +60,7 @@ let
   withPackages = pkgs.callPackage ./with-packages.nix { inherit idris2; };
 
 in rec {
-  inherit idris2 withPackages idris2Api mkIdrisPackage;
+  inherit idris2 withPackages idris2Api mkIdrisPackage mkIdrisExecutable;
   bifunctors = mkIdrisPackage "bifunctors" package-sources.Idris-Bifunctors [ ];
   lens = mkIdrisPackage "lens" package-sources.idris-lens [ bifunctors ];
   wl-pprint = mkIdrisPackage "wl-pprint" package-sources.wl-pprint [ ];
