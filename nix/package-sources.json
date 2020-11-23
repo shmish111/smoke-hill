@@ -5,10 +5,10 @@
         "homepage": null,
         "owner": "shmish111",
         "repo": "Idris-Bifunctors",
-        "rev": "2696a5aa332872567fdfd1033f8991eaf0fbb2cc",
-        "sha256": "0sr1nspqgib8r552h08qi35q4z3wcnbgbnsvmr0cyzsdc1vvhb9f",
+        "rev": "a4761bc5bfd6837c1e133ecdbc7f6ea1c95d924f",
+        "sha256": "009flg91j1ypi797wymxk37h5zyaaiaqscxmabvfvrw5986rcpcp",
         "type": "tarball",
-        "url": "https://github.com/shmish111/Idris-Bifunctors/archive/2696a5aa332872567fdfd1033f8991eaf0fbb2cc.tar.gz",
+        "url": "https://github.com/shmish111/Idris-Bifunctors/archive/a4761bc5bfd6837c1e133ecdbc7f6ea1c95d924f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "Idris2": {
@@ -17,10 +17,10 @@
         "homepage": "https://idris-lang.org/",
         "owner": "idris-lang",
         "repo": "Idris2",
-        "rev": "143d2c5b11a58b547b8a5a34eb21dcd4b9512591",
-        "sha256": "0c54qry2z5by78x4qnf5vajmbr7p3k7pwwn5dzrc8pv13p6ca3p4",
+        "rev": "a7cb2745bcc7cf6b920ff00eecb18372835c4a06",
+        "sha256": "13wkbidbh5dxw4hnp8hv4p2zrfsxawk6h5w7sgpbv9hc8q8llr6g",
         "type": "tarball",
-        "url": "https://github.com/idris-lang/Idris2/archive/143d2c5b11a58b547b8a5a34eb21dcd4b9512591.tar.gz",
+        "url": "https://github.com/idris-lang/Idris2/archive/a7cb2745bcc7cf6b920ff00eecb18372835c4a06.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "idris-lens": {
