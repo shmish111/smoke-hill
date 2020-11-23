@@ -54,12 +54,12 @@
         "branch": "master",
         "description": "Minimal port of optparse-applicative to idris",
         "homepage": null,
-        "owner": "HuwCampbell",
+        "owner": "shmish111",
         "repo": "optparse-idris",
-        "rev": "a60c82f026469e6dcc010e26164953658b08bbb2",
-        "sha256": "1gzcrpyshb21z52lkpwri57nlxpknpspf684m1war14fbp1rc5fv",
+        "rev": "e972840ad4cfed7da8b3de3f2e87c1aecf6cd40e",
+        "sha256": "0n42kx9750xirgfysx30msn9ksi830c2xs59aln7164ai4inp87q",
         "type": "tarball",
-        "url": "https://github.com/HuwCampbell/optparse-idris/archive/a60c82f026469e6dcc010e26164953658b08bbb2.tar.gz",
+        "url": "https://github.com/shmish111/optparse-idris/archive/e972840ad4cfed7da8b3de3f2e87c1aecf6cd40e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "wl-pprint": {
