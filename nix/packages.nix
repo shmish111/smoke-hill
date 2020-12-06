@@ -3,9 +3,11 @@
 , idris2 ? import ./idris2.nix { inherit sources; } }:
 
 let
-  mkIdrisPackage = name: src: deps:
+  mkIdrisPackage = packages: name:
     with pkgs;
     let
+      src = builtins.getAttr name package-sources;
+      deps = map (dep: builtins.getAttr dep packages) src.dependencies;
       installDep = dep: ''
         cp -r ${dep}/ ./${dep.name}/
         export IDRIS2_PATH=$IDRIS2_PATH:./${dep.name}
@@ -43,14 +45,22 @@ let
       '';
     };
 
-  idris2Api = with pkgs;
+  idris2api = with pkgs;
     stdenv.mkDerivation rec {
       name = "idris2api";
       src = package-sources.Idris2;
-      buildPhase = ''
-        make src/IdrisPaths.idr
-        ${idris2}/bin/idris2 --build ${name}.ipkg
-      '';
+      patches = [ ./make.patch ];
+
+      buildFlags = [ "build-api" "IDRIS2_BOOT=${idris2}/bin/idris2" ];
+
+      # preInstall = ''
+      #   mkdir -p $out
+      #   echo 'print-libdir : ; $(info ''${NAME}-''${IDRIS2_VERSION}) @true' > print.mak
+      #   cat print.mak
+      #   IDRIS_LIB_DIR=$(make -f print.mak -f Makefile print-libdir)
+      #   mkdir -p $out/$IDRIS_LIB_DIR/idris2
+      #   cp -R ./build/ttc/* $out/$IDRIS_LIB_DIR/idris2/
+      # '';
       installPhase = ''
         mkdir $out
         cp -R ./build/ttc/* $out/
@@ -59,14 +69,11 @@ let
 
   withPackages = pkgs.callPackage ./with-packages.nix { inherit idris2; };
 
-in rec {
-  inherit idris2 withPackages idris2Api mkIdrisPackage mkIdrisExecutable;
-  bifunctors = mkIdrisPackage "bifunctors" package-sources.Idris-Bifunctors [ ];
-  lens = mkIdrisPackage "lens" package-sources.idris-lens [ bifunctors ];
-  wl-pprint = mkIdrisPackage "wl-pprint" package-sources.wl-pprint [ ];
-  optparse = mkIdrisPackage "optparse" package-sources.optparse-idris [
-    wl-pprint
-    lens
-    bifunctors
-  ];
-}
+  ps = rec {
+    inherit idris2 withPackages idris2api mkIdrisPackage mkIdrisExecutable;
+    bifunctors = mkIdrisPackage ps "bifunctors";
+    lens = mkIdrisPackage ps "lens";
+    wl-pprint = mkIdrisPackage ps "wl-pprint";
+    optparse = mkIdrisPackage ps "optparse";
+  };
+in ps

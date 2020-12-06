@@ -1,6 +1,19 @@
 {
-    "Idris-Bifunctors": {
+    "Idris2": {
         "branch": "master",
+        "description": "A purely functional programming language with first class types",
+        "homepage": "https://idris-lang.org/",
+        "owner": "idris-lang",
+        "repo": "Idris2",
+        "rev": "9e22a6e07b0849828e89a93f7c1a26c22618afeb",
+        "sha256": "13ykm8m3f3p4060fmbclphs7m57d8w3bg170h9qh7f2w70r03jca",
+        "type": "tarball",
+        "url": "https://github.com/idris-lang/Idris2/archive/9e22a6e07b0849828e89a93f7c1a26c22618afeb.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "bifunctors": {
+        "branch": "master",
+        "dependencies": [],
         "description": "A small bifunctor library for idris",
         "homepage": null,
         "owner": "shmish111",
@@ -11,20 +24,11 @@
         "url": "https://github.com/shmish111/Idris-Bifunctors/archive/a4761bc5bfd6837c1e133ecdbc7f6ea1c95d924f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "Idris2": {
+    "lens": {
         "branch": "master",
-        "description": "A purely functional programming language with first class types",
-        "homepage": "https://idris-lang.org/",
-        "owner": "idris-lang",
-        "repo": "Idris2",
-        "rev": "a7cb2745bcc7cf6b920ff00eecb18372835c4a06",
-        "sha256": "13wkbidbh5dxw4hnp8hv4p2zrfsxawk6h5w7sgpbv9hc8q8llr6g",
-        "type": "tarball",
-        "url": "https://github.com/idris-lang/Idris2/archive/a7cb2745bcc7cf6b920ff00eecb18372835c4a06.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "idris-lens": {
-        "branch": "master",
+        "dependencies": [
+            "bifunctors"
+        ],
         "description": "van Laarhoven lenses for Idris",
         "homepage": null,
         "owner": "shmish111",
@@ -50,8 +54,13 @@
         "url": "https://github.com/ziman/lightyear/archive/6f56439ea4bdba6a3ad4a11221c6028ed9d74047.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "optparse-idris": {
+    "optparse": {
         "branch": "master",
+        "dependencies": [
+            "bifunctors",
+            "wl-pprint",
+            "lens"
+        ],
         "description": "Minimal port of optparse-applicative to idris",
         "homepage": null,
         "owner": "shmish111",
@@ -64,6 +73,7 @@
     },
     "wl-pprint": {
         "branch": "master",
+        "dependencies": [],
         "description": "A mirror of wl-pprint fixed for GHC 7.10.2",
         "homepage": null,
         "owner": "shmish111",
