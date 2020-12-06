@@ -1,0 +1,23 @@
+diff --git a/Makefile b/Makefile
+index a1d61d5d..cd6650c4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -50,7 +50,7 @@ export SCHEME
+ 
+ .PHONY: all idris2-exec ${TARGET} testbin support support-clean clean distclean FORCE
+ 
+-all: support ${TARGET} testbin libs
++all: support ${TARGET} testbin libs build-api
+ 
+ idris2-exec: ${TARGET}
+ 
+@@ -107,6 +107,9 @@ clean: clean-libs support-clean
+ 
+ install: install-idris2 install-support install-libs
+ 
++build-api: src/IdrisPaths.idr
++	${IDRIS2_BOOT} --build ${IDRIS2_LIB_IPKG}
++
+ install-api: src/IdrisPaths.idr
+ 	${IDRIS2_BOOT} --install ${IDRIS2_LIB_IPKG}
+ 
