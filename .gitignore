@@ -2,3 +2,5 @@
 *.ibc
 *~
 bazel-*
+result
+result-*
