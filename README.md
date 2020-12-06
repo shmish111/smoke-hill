@@ -23,7 +23,7 @@ If you are the maintainer of an Idris library, it's fairly simple to add it to S
 1. Fork the smoke-hill github repository
 2. Run `nix-shell`
 3. Add your repository using `niv -s ./nix/package-sources.json add githubuser/reponame -n package-name`. For more information on niv usage (for example your library is not hosted on github) see https://github.com/nmattia/niv
-4. Find your package entry in [./nix/package-sources.json]() and add a list of dependencies. If there are no dependencies you will still need to add a `dependencies = [],` attribute.
+4. Find your package entry in [package-sources.json](https://github.com/shmish111/smoke-hill/blob/master/nix/package-sources.json) and add a list of dependencies. If there are no dependencies you will still need to add a `dependencies = [],` attribute.
 5. Add your package to the [packages derivation](https://github.com/shmish111/smoke-hill/blob/master/nix/packages.nix) using the form `packagename = mkIdrisPackage "packagename" ps;`
 6. Check that `nix-build -A packages` builds successfully.
 7. Create a pull request with these changes.
