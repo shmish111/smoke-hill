@@ -64,6 +64,14 @@ let
       installPhase = ''
         mkdir $out
         cp -R ./build/ttc/* $out/
+        # Remove modules that are not in the ipkg file and conflict with contrib
+        # This is a temporary hack while I work out if there is a better way to do this
+        rm $out/Text/Token.*
+        rm $out/Text/Quantity.*
+        rm -Rf $out/Text/Lexer
+        rm $out/Text/Lexer.*
+        rm -Rf $out/Text/Parser
+        rm $out/Text/Parser.*
       '';
     };
 

@@ -5,10 +5,10 @@
         "homepage": "https://idris-lang.org/",
         "owner": "idris-lang",
         "repo": "Idris2",
-        "rev": "7e8ef1f10ea8ad795e5a60efaa990722e80009b1",
-        "sha256": "1i81naaz2b54q81cvck148j340x51m5kifwwi1df2jjx1kqzd9al",
+        "rev": "2609bd0c4b817d50138e771903b6103267cd8ccc",
+        "sha256": "1rj52jl0ga1ry5wk0sa75chbq1fxgbm2754c27yz76vwx3hgjr3x",
         "type": "tarball",
-        "url": "https://github.com/idris-lang/Idris2/archive/7e8ef1f10ea8ad795e5a60efaa990722e80009b1.tar.gz",
+        "url": "https://github.com/idris-lang/Idris2/archive/2609bd0c4b817d50138e771903b6103267cd8ccc.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "bifunctors": {
