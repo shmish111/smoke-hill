@@ -5,10 +5,10 @@
         "homepage": "https://idris-lang.org/",
         "owner": "idris-lang",
         "repo": "Idris2",
-        "rev": "9e22a6e07b0849828e89a93f7c1a26c22618afeb",
-        "sha256": "13ykm8m3f3p4060fmbclphs7m57d8w3bg170h9qh7f2w70r03jca",
+        "rev": "7e8ef1f10ea8ad795e5a60efaa990722e80009b1",
+        "sha256": "1i81naaz2b54q81cvck148j340x51m5kifwwi1df2jjx1kqzd9al",
         "type": "tarball",
-        "url": "https://github.com/idris-lang/Idris2/archive/9e22a6e07b0849828e89a93f7c1a26c22618afeb.tar.gz",
+        "url": "https://github.com/idris-lang/Idris2/archive/7e8ef1f10ea8ad795e5a60efaa990722e80009b1.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "bifunctors": {
@@ -18,10 +18,10 @@
         "homepage": null,
         "owner": "shmish111",
         "repo": "Idris-Bifunctors",
-        "rev": "a4761bc5bfd6837c1e133ecdbc7f6ea1c95d924f",
-        "sha256": "009flg91j1ypi797wymxk37h5zyaaiaqscxmabvfvrw5986rcpcp",
+        "rev": "06dd7a4e644df5f177037497d3f73f43d5da637f",
+        "sha256": "16mg4lggiaq782nrmc1931ivc6sdf3waknpxp98crmf3xf1j59rs",
         "type": "tarball",
-        "url": "https://github.com/shmish111/Idris-Bifunctors/archive/a4761bc5bfd6837c1e133ecdbc7f6ea1c95d924f.tar.gz",
+        "url": "https://github.com/shmish111/Idris-Bifunctors/archive/06dd7a4e644df5f177037497d3f73f43d5da637f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lens": {
@@ -33,10 +33,10 @@
         "homepage": null,
         "owner": "shmish111",
         "repo": "idris-lens",
-        "rev": "c0c45c8b0940f46e15bf7722d62c35812e0ffb67",
-        "sha256": "0rj8gaszppb3aydr3yjay0psld3r68j6g6l0j8nx30ir8ii7vqzv",
+        "rev": "0f9dd4e96ead2d012631075743ba38cdb8d80c83",
+        "sha256": "1jcxwx4jyd7wc3n6nyc4d1nhvcnzd4bd4f2smw851sg3i23372ik",
         "type": "tarball",
-        "url": "https://github.com/shmish111/idris-lens/archive/c0c45c8b0940f46e15bf7722d62c35812e0ffb67.tar.gz",
+        "url": "https://github.com/shmish111/idris-lens/archive/0f9dd4e96ead2d012631075743ba38cdb8d80c83.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lightyear": {
@@ -65,10 +65,10 @@
         "homepage": null,
         "owner": "shmish111",
         "repo": "optparse-idris",
-        "rev": "e972840ad4cfed7da8b3de3f2e87c1aecf6cd40e",
-        "sha256": "0n42kx9750xirgfysx30msn9ksi830c2xs59aln7164ai4inp87q",
+        "rev": "412766bc1d7e2ad6ae32d5ba6273748af0d8c547",
+        "sha256": "179k7r5jzg1gpqary9fbz05gyi3ayhzmfdy1pkyssvxzsr6fd2bn",
         "type": "tarball",
-        "url": "https://github.com/shmish111/optparse-idris/archive/e972840ad4cfed7da8b3de3f2e87c1aecf6cd40e.tar.gz",
+        "url": "https://github.com/shmish111/optparse-idris/archive/412766bc1d7e2ad6ae32d5ba6273748af0d8c547.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "wl-pprint": {
